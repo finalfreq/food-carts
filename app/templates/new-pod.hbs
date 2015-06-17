@@ -1,0 +1,13 @@
+<form>
+  <div class="form-group">
+    <label for="name">Enter Name</label>
+    {{input id="name" value=name class="form-control"}}
+    <label for="sector">Enter Region:</label>
+    {{input id="sector" value=sector class="form-control" placeholder="northwest, northeast, southwest, or southeast"}}
+    <label for="address">Enter Address:</label>
+    {{input id="address" value=address class="form-control"}}
+
+  </div>
+
+    <button class="btn btn-success" {{action "save"}}>Submit New Pod</button>
+</form>

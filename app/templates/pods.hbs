@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1> Food Cart Paradise </h1>
+  </div>
+
+
+  <h2> Welcome to Earth's Greatest Collection of Food Carts</h2>
+  <br>
+  <div class="row">
+    <div class="col-md-5 well">
+      <ul class="list-unstyled">
+        <h3> Northwest Pods</h3>
+        {{#each pod in northwestPods}}
+
+          <li>{{#link-to "pod" pod.id}}{{pod.name}}{{/link-to}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-5 col-md-offset-1 well">
+      <ul class="list-unstyled">
+        <h3> Northeast Pods</h3>
+        {{#each pod in northeastPods}}
+
+        <li>{{#link-to "pod" pod.id}}{{pod.name}}{{/link-to}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 well">
+      <ul class="list-unstyled">
+        <h3> Southwest Pods </h3>
+        {{#each pod in southwestPods}}
+
+        <li>{{#link-to "pod" pod.id}}{{pod.name}}{{/link-to}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-5 col-md-offset-1 well">
+      <ul class="list-unstyled">
+        <h3> Southeast Pods </h3>
+        {{#each pod in southeastPods}}
+
+        <li>{{#link-to "pod" pod.id}}{{pod.name}}{{/link-to}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+
+  <hr>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1">
+
+      <p>{{#link-to "new-pod"}}Admin Only{{/link-to}}</p>
+
+    </div>
+    <div class="col-md-4 col-md-offset-3">
+
+      {{outlet "new-pod"}}
+    </div>
+  </div>
+
+
+
+</div>
