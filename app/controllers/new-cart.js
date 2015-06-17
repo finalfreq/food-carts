@@ -5,20 +5,20 @@ export default Ember.Controller.extend({
   actions: {
     save: function() {
       var newCart = this.store.createRecord('cart', {
-        name: this.get('name'),
-
+        name: this.get('name')
       });
-      newCart.save();
       var pod = this.get("controllers.pod.model");
+      newCart.set('pod', pod);
+      newCart.save().then(function() {
+        pod.get('carts').pushObject(newCart);    //saves to firebase but only will show up once.. need it with associations
+        pod.save();
+      });
 
-      pod.get('carts').pushObject(newCart);
-
-      pod.save();
       this.setProperties({
         name: ''
       });
 
-      this.transitionToRoute('pod');
+      this.transitionToRoute('pod', pod.id);
     }
   }
 });

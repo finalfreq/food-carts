@@ -11,7 +11,9 @@ Router.map(function() {
   });
   this.resource('pod', {path: "/pods/:pod_id"}, function(){
     this.resource('new-cart');
+    this.resource('cart', {path: "/carts/:cart_id"});
   });
+  // this.resource('cart', {path: "/cart/:cart_id"});
 });
 
 export default Router;
